@@ -4,8 +4,11 @@ function getCompChoice(){
     let rand = Math.floor(Math.random() * 3)
     return HAND[rand]
 }
-
-function playAgainstComp(playerHand){
+function sanitizePlayerInput(s){
+    return s.toLowerCase();
+}
+function playAgainstComp(pH){
+    let playerHand = sanitizePlayerInput(pH);
     let compHand = getCompChoice();
     switch(playerHand){
         case HAND[0]:
