@@ -13,9 +13,14 @@ function resetScore(){
     compScore = 0;
 }
 function game(){
+    resetScore();
     for(let round = 0; round <5; round++){
-        console.log(playAgainstComp(prompt("Rock, Paper, or Scissors?")));
-        
+        alert(playAgainstComp(prompt("Rock, Paper, or Scissors?")));
+    }
+    if(playerScore > compScore){
+        alert("Congratulations, you've won!");
+    }else{
+        alert("You've lost!");
     }
 }
 function getCompChoice(){
