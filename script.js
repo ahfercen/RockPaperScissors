@@ -13,33 +13,33 @@ function playAgainstComp(pH){
     switch(playerHand){
         case HAND[0]:
             if(compHand == HAND[0]){
-                console.log(`Player: ${playerHand},\nComp: ${compHand},\nTie!`);
+                return(`Player: ${playerHand},\nComp: ${compHand},\nTie!`);
             }else if(compHand == HAND[1]){
-                console.log(`Player: ${playerHand},\nComp: ${compHand},\nComp wins!`);
+                return(`Player: ${playerHand},\nComp: ${compHand},\nComp wins!`);
             }else if(compHand == HAND[2]){
-                console.log(`Player: ${playerHand},\nComp: ${compHand},\nPlayer wins!`);
+                return(`Player: ${playerHand},\nComp: ${compHand},\nPlayer wins!`);
             }
             break;
         case HAND[1]:
             if(compHand == HAND[0]){
-                console.log(`Player: ${playerHand},\nComp: ${compHand},\nPlayer win!`);
+                return(`Player: ${playerHand},\nComp: ${compHand},\nPlayer win!`);
             }else if(compHand == HAND[1]){
-                console.log(`Player: ${playerHand},\nComp: ${compHand},\nTie!`);
+                return(`Player: ${playerHand},\nComp: ${compHand},\nTie!`);
             }else if(compHand == HAND[2]){
-                console.log(`Player: ${playerHand},\nComp: ${compHand},\nComp wins!`);
+                return(`Player: ${playerHand},\nComp: ${compHand},\nComp wins!`);
             }
             break;
         case HAND[2]:
             if(compHand == HAND[0]){
-                console.log(`Player: ${playerHand},\nComp: ${compHand},\nComp Wins!`);
+                return(`Player: ${playerHand},\nComp: ${compHand},\nComp Wins!`);
             }else if(compHand == HAND[1]){
-                console.log(`Player: ${playerHand},\nComp: ${compHand},\nPlayer Wins!`);
+                return(`Player: ${playerHand},\nComp: ${compHand},\nPlayer Wins!`);
             }else if(compHand == HAND[2]){
-                console.log(`Player: ${playerHand},\nComp: ${compHand},\nTie!`);
+                return(`Player: ${playerHand},\nComp: ${compHand},\nTie!`);
             }
             break;
         default:
-            console.log("ERROR: undefined hand, please choose a valid hand.");
+            return("ERROR: undefined hand, please choose a valid hand.");
             break;
     }
 };
