@@ -21,6 +21,7 @@ body{
     text-align: center;
 }
 .Buttons{
+    padding: 100px 0px 11% 0px;
     background-color: burlywood;
     display: flex;
     justify-content: space-around;
@@ -29,4 +30,9 @@ body{
     border-radius: 10px;
     background-color:azure;
     padding: 15px;
+    width: 150px;
+    height: 80px;
+}
+.padding{
+    width: 20%;
 }
