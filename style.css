@@ -1,9 +1,19 @@
+body{
+    margin: 0;
+}
 .container{
     display: flex;
     flex-direction: column;
 }
 .Title{
     background-color: darksalmon;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.Title h1{
+    margin-top: 100px;
+    font-size: 100px;
 }
 .Result{
     background-color: thistle;
