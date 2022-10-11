@@ -22,4 +22,11 @@ body{
 }
 .Buttons{
     background-color: burlywood;
+    display: flex;
+    justify-content: space-around;
+}
+.Buttons button{
+    border-radius: 10px;
+    background-color:azure;
+    padding: 15px;
 }
