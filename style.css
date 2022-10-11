@@ -17,6 +17,8 @@ body{
 }
 .Result{
     background-color: thistle;
+    font-size: 50px;
+    text-align: center;
 }
 .Buttons{
     background-color: burlywood;
