@@ -1,6 +1,9 @@
 const HAND = ['rock','paper','scissors'];
 let playerScore = 0;
 let compScore = 0;
+
+const winText = document.querySelector('.resText');
+
 function playerWin(bool){
     if(bool === true){
         playerScore++;
@@ -36,35 +39,35 @@ function playAgainstComp(pH){
     switch(playerHand){
         case HAND[0]:
             if(compHand == HAND[0]){
-                return(`Player: ${playerHand},\nComp: ${compHand},\nTie!`);
+                winText.textContent = `Player: ${playerHand},\nComp: ${compHand},\nTie!`;
             }else if(compHand == HAND[1]){
                 playerWin(false);
-                return(`Player: ${playerHand},\nComp: ${compHand},\nComp wins!`);
+                winText.textContent = `Player: ${playerHand},\nComp: ${compHand},\nComp wins!`;
             }else if(compHand == HAND[2]){
                 playerWin(true);
-                return(`Player: ${playerHand},\nComp: ${compHand},\nPlayer wins!`);
+                winText.textContent = `Player: ${playerHand},\nComp: ${compHand},\nPlayer wins!`;
             }
             break;
         case HAND[1]:
             if(compHand == HAND[0]){
                 playerWin(true);
-                return(`Player: ${playerHand},\nComp: ${compHand},\nPlayer win!`);
+                winText.textContent = `Player: ${playerHand},\nComp: ${compHand},\nPlayer win!`;
             }else if(compHand == HAND[1]){
-                return(`Player: ${playerHand},\nComp: ${compHand},\nTie!`);
+                winText.textContent = `Player: ${playerHand},\nComp: ${compHand},\nTie!`;
             }else if(compHand == HAND[2]){
                 playerWin(false);
-                return(`Player: ${playerHand},\nComp: ${compHand},\nComp wins!`);
+                winText.textContent = `Player: ${playerHand},\nComp: ${compHand},\nComp wins!`;
             }
             break;
         case HAND[2]:
             if(compHand == HAND[0]){
                 playerWin(false);
-                return(`Player: ${playerHand},\nComp: ${compHand},\nComp Wins!`);
+                winText.textContent = (`Player: ${playerHand},\nComp: ${compHand},\nComp Wins!`);
             }else if(compHand == HAND[1]){
                 playerWin(true);
-                return(`Player: ${playerHand},\nComp: ${compHand},\nPlayer Wins!`);
+                winText.textContent = (`Player: ${playerHand},\nComp: ${compHand},\nPlayer Wins!`);
             }else if(compHand == HAND[2]){
-                return(`Player: ${playerHand},\nComp: ${compHand},\nTie!`);
+                winText.textContent = (`Player: ${playerHand},\nComp: ${compHand},\nTie!`);
             }
             break;
         default:
@@ -80,9 +83,9 @@ const scissorsButton = document.querySelector(`button[data-hand=Scissors]`);
 rockButton.addEventListener('click',function() {
     playAgainstComp("rock");
 });
-rockButton.addEventListener('click',function(){
+paperButton.addEventListener('click',function(){
     playAgainstComp("paper");
 });
-rockButton.addEventListener('click',function() {
+scissorsButton.addEventListener('click',function() {
     playAgainstComp("scissors");
 });
