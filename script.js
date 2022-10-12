@@ -1,8 +1,10 @@
 const HAND = ['rock','paper','scissors'];
 let playerScore = 0;
 let compScore = 0;
+let roundCount = 0;
 
 const winText = document.querySelector('.resText');
+const scoreText = document.querySelector('.score');
 
 function playerWin(bool){
     if(bool === true){
@@ -11,19 +13,24 @@ function playerWin(bool){
         compScore++;
     }
 }
+function iterRound(){
+    roundCount++;
+}
 function resetScore(){
     playerScore = 0;
     compScore = 0;
+    roundCount = 0;
 }
 function game(){
-    resetScore();
-    for(let round = 0; round <5; round++){
-        alert(playAgainstComp(prompt("Rock, Paper, or Scissors?")));
-    }
-    if(playerScore > compScore){
-        alert("Congratulations, you've won!");
-    }else{
-        alert("You've lost!");
+    if(roundCount == 5){
+        if(playerScore > compScore){
+            winText.textContent = "Player Wins!";
+        }else if(compScore > playerScore){
+            winText.textContent = "Comp Wins!";
+        }else{
+            winText.textContent = "Tie!";
+        }
+        resetScore();
     }
 }
 function getCompChoice(){
@@ -74,6 +81,9 @@ function playAgainstComp(pH){
             return("ERROR: undefined hand, please choose a valid hand.");
             break;
     }
+    iterRound();
+    scoreText.textContent = `Player: ${playerScore}, Comp: ${compScore}, Ties: ${roundCount - playerScore - compScore}`;
+    game();
 };
 
 const rockButton = document.querySelector(`button[data-hand=Rock]`);
