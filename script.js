@@ -72,3 +72,17 @@ function playAgainstComp(pH){
             break;
     }
 };
+
+const rockButton = document.querySelector(`button[data-hand=Rock]`);
+const paperButton = document.querySelector(`button[data-hand=Paper]`);
+const scissorsButton = document.querySelector(`button[data-hand=Scissors]`);
+
+rockButton.addEventListener('click',function() {
+    playAgainstComp("rock");
+});
+rockButton.addEventListener('click',function(){
+    playAgainstComp("paper");
+});
+rockButton.addEventListener('click',function() {
+    playAgainstComp("scissors");
+});
